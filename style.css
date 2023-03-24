@@ -13,6 +13,7 @@ body {
     justify-content: center;
     min-height: 100vh;
     background: #E3F2FD;
+    user-select: none;
 }
 
 .wrapper {
@@ -64,6 +65,33 @@ body {
     font-size: 1.6rem;
     width: calc(100% / 4);
     border-right: 1px solid #171b26;
+}
+
+.game-over-alert {
+    width: 35%;
+    text-align: center;
+    margin: auto;
+    border: #60CBFF;
+    border-radius: 5px;
+    padding: 0.5rem;
+    position: absolute;
+    background-color: #B8C6DC;
+    /* display: none; */
+}
+
+.game-over-alert h3 {
+    margin: 1rem;
+}
+
+
+#new-game-btn {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+#new-game-btn:hover {
+    background-color: #60CBFF;
 }
 
 @media screen and (max-width: 700px) {
