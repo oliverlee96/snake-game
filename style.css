@@ -40,6 +40,7 @@ body {
     display: grid;
     grid-template: repeat(30, 1fr) / repeat(30, 1fr);
     background: #212837;
+    
 }
 
 .play-board .food {
@@ -50,4 +51,18 @@ body {
     background-color: #60CBFF;
 }
 
+.controls {
+    display: flex;
+    justify-content: space-between;
+}
+
+.controls span {
+    padding: 22px 0;
+    color: #B8C6DC;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.6rem;
+    width: calc(100% / 4);
+    border-right: 1px solid #171b26;
+}
 
