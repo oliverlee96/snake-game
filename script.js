@@ -2,6 +2,8 @@ const playBoard = document.querySelector(".play-board");
 const scoreElement = document.querySelector(".score");
 const highScoreElement = document.querySelector(".high-score");
 const controls = document.querySelectorAll(".controls span");
+const gameOverAlert = document.querySelector(".game-over-alert");
+const newGameButton = document.querySelector(".new-game-btn");
 
 let gameOver = false;
 let foodX, foodY;
@@ -29,7 +31,11 @@ const handleGameOver = () => {
     };
     //Clearing timer and reloading page on game over
     clearInterval(setIntervalId);
-    alert("Game Over! Press OK to replay");
+    gameOverAlert.style.display = "block";
+    // location.reload();
+}
+
+const reload = () => {
     location.reload();
 }
 
@@ -103,6 +109,8 @@ const initGame = () => {
 }
 
 changeFoodPosition();
-setIntervalId = setInterval(initGame, 125); //snake speed
+setIntervalId = setInterval(initGame, 200); //snake speed
 
 document.addEventListener("keydown", changeDirection);
+//New game event listener for the button
+// location.reload();

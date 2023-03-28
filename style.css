@@ -68,15 +68,21 @@ body {
 }
 
 .game-over-alert {
-    width: 35%;
+    width: 37%;
     text-align: center;
     margin: auto;
-    border: #60CBFF;
     border-radius: 5px;
     padding: 0.5rem;
     position: absolute;
     background-color: #B8C6DC;
-    /* display: none; */
+    box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);
+    display: none;
 }
 
 .game-over-alert h3 {
@@ -85,13 +91,17 @@ body {
 
 
 #new-game-btn {
-    padding: 0.5rem;
+    padding: 0.7rem;
     margin-top: 0.5rem;
     margin-bottom: 1rem;
+    color: #B8C6DC;
+    background-color: #293447;
+    border-radius: 3px;
+    border: none;
 }
 
 #new-game-btn:hover {
-    background-color: #60CBFF;
+    background-color: #425472;
 }
 
 @media screen and (max-width: 700px) {
