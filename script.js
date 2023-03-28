@@ -3,7 +3,7 @@ const scoreElement = document.querySelector(".score");
 const highScoreElement = document.querySelector(".high-score");
 const controls = document.querySelectorAll(".controls span");
 const gameOverAlert = document.querySelector(".game-over-alert");
-const newGameButton = document.querySelector(".new-game-btn");
+const newGameButton = document.getElementById("new-game-btn");
 
 let gameOver = false;
 let foodX, foodY;
@@ -61,7 +61,13 @@ controls.forEach(key => {
     key.addEventListener("click", () => changeDirection({key: key.dataset.key}))
 })
 
+const resetBoard = () => {
+    gameOverAlert.style.display = "none";
+}
+
 const initGame = () => {
+
+    gameOverAlert.style.display = "none";
 
     if (gameOver) return handleGameOver();
     //Places the food piece and snake head on the playboard in the generated positions
@@ -109,8 +115,12 @@ const initGame = () => {
 }
 
 changeFoodPosition();
-setIntervalId = setInterval(initGame, 200); //snake speed
+setIntervalId = setInterval(initGame, 125); //snake speed
 
 document.addEventListener("keydown", changeDirection);
-//New game event listener for the button
+// newGameButton.addEventListener("click", initGame);
+// newGameButton.addEventListener("click", resetBoard);
+
+
+//New game event listener for the button. on click gameOverAlert.style.display = "none";
 // location.reload();
