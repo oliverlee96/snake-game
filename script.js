@@ -32,6 +32,7 @@ const handleGameOver = () => {
     //Clearing timer and reloading page on game over
     clearInterval(setIntervalId);
     gameOverAlert.style.display = "block";
+    
     // location.reload();
 }
 
@@ -61,17 +62,18 @@ controls.forEach(key => {
     key.addEventListener("click", () => changeDirection({key: key.dataset.key}))
 })
 
-const resetBoard = () => {
+const resetGame = () => {
     gameOverAlert.style.display = "none";
+    reload();
 }
 
 const initGame = () => {
 
-    gameOverAlert.style.display = "none";
-
     if (gameOver) return handleGameOver();
     //Places the food piece and snake head on the playboard in the generated positions
     let htmlMarkup = `<div class="food" style= "grid-area: ${foodY} / ${foodX}"></div>`;
+
+    gameOverAlert.style.display = "none";
 
     //Checking if snake gets the food
     if(snakeX === foodX && snakeY === foodY) {
@@ -118,9 +120,9 @@ changeFoodPosition();
 setIntervalId = setInterval(initGame, 125); //snake speed
 
 document.addEventListener("keydown", changeDirection);
-// newGameButton.addEventListener("click", initGame);
-// newGameButton.addEventListener("click", resetBoard);
+newGameButton.addEventListener("click", resetGame); 
 
-
-//New game event listener for the button. on click gameOverAlert.style.display = "none";
-// location.reload();
+//Todo: Make the snake head random too
+//Build this as a node.js app
+//Add ability to customise the colour of the snake?
+//Store scores in backend
